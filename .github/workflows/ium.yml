@@ -45,12 +45,11 @@ jobs:
           cd external
           python train_model.py --lr ${{ github.event.inputs.learning_rate }} --num_epochs ${{ github.event.inputs.epochs }}
 
-
       - name: Upload model as artifact
         uses: actions/upload-artifact@v4
         with:
           name: model
-          path: external/.model/model.pth
+          path: external/model_weights.pth
 
   evaluate:
     name: "Evaluate model"
