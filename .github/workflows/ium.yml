@@ -83,7 +83,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: model
-          path: external/.model
+          path: external/
 
       - name: Evaluate model
         run: |
