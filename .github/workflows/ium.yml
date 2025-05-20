@@ -43,7 +43,8 @@ jobs:
       - name: Train model
         run: |
           cd external
-          python train_model.py with learning_rate=${{ github.event.inputs.learning_rate }} epochs=${{ github.event.inputs.epochs }}
+          python train_model.py --lr ${{ github.event.inputs.learning_rate }} --num_epochs ${{ github.event.inputs.epochs }}
+
 
       - name: Upload model as artifact
         uses: actions/upload-artifact@v4
